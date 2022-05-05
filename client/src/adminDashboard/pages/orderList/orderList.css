@@ -1,0 +1,52 @@
+.order-list-dash-container{
+    display: flex;
+    margin-top: 10px;
+}
+.orderList{
+    flex: 4;
+    margin-top: 10px;
+}
+.loader-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.orderListItem{
+    display: flex;
+    align-items: center;
+}
+
+.orderListImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+.dashorderListEdit{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #3bb077;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+    line-height: 1.5;
+}
+
+.orderListDelete{
+    color: red;
+    cursor: pointer;
+}
+
+.orderAddButton {
+    margin: 20px auto;
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+    background: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
