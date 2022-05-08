@@ -3,6 +3,8 @@ import slideImage2 from './assets/images/slider-image11.jpeg'
 import slideImage3 from './assets/images/slider-image16.jpeg'
 
 // categories images
+// link for hosting on vps server
+// https://www.youtube.com/watch?v=Nxw2j1-srVc
 
 import slideImageCat1 from './assets/images/women-cat1.jpeg'
 import slideImageCat2 from './assets/images/slider-image3.jpg'
