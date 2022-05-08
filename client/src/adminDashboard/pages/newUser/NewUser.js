@@ -1,12 +1,10 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
-import Topbar from "../../components/topbar/Topbar";
 import "./newUser.css";
 
  const NewuserDash = () => {
   return (
     <div>
-       <Topbar />
       <main className="new-user-container">
       <Sidebar />
       <div className="newUser">

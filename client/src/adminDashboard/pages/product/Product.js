@@ -102,7 +102,9 @@ import Loader from "../../../Components/loader/Loader";
 
   return (
    <div>
-       <Topbar />
+     {
+       loading && <Loader />
+     }
        <main className="product-dash-container">
            <Sidebar />
        <div className="dash-product">

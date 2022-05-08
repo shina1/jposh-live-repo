@@ -75,7 +75,6 @@ import Loader from "../../../Components/loader/Loader";
 
   return (
     <div>
-      <Topbar />
       <main className="user-list-container">
       <Sidebar />
       <div className="userList">

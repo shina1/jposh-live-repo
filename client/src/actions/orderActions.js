@@ -111,8 +111,6 @@ export const payOrder = (orderId, paymentResult) => async(dispatch, getState) =>
         // https://ancient-beach-60604.herokuapp.com/api/v1/order/${orderId}/pay
         const { data } = await axios.put(`${PRODUCTION_BASE_URL}order/${orderId}/pay`, paymentResult, config)
 
-        console.log(data)
-
         dispatch({
             type: ORDER_PAY_SUCCESS,
             payload: data,
@@ -194,7 +192,6 @@ export const deliverOrder = (orderId) => async (dispatch, getState) => {
       }
   
       const { data } = await axios.get(`${PRODUCTION_BASE_URL}order/userorder/${userID}`, config)
-     console.log('this are your list of orders',data);
       dispatch({
         type: ORDER_LIST_MY_SUCCESS,
         payload: data,

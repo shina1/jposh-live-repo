@@ -17,13 +17,7 @@ import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
      const orderId = params.orderId;
      const orderDetails = useSelector((state) => state.orderDetails)
      const orderDelivery= useSelector((state) => state.orderDelivery)
-    const{loading, order} =  orderDetails
-    console.log(order)
-
-    
-
-   
-     
+    const{loading, order} =  orderDetails;
 
      useEffect(() => {
          dispatch(getOrderDetails(orderId))
@@ -31,7 +25,6 @@ import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
 
 
      
-    //  console.log();
     const handleUpdate = (e) => {
         e.preventDefault()
         dispatch(deliverOrder(orderId))
@@ -46,6 +39,9 @@ import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
 
   return (
    <div>
+       {
+           loading && <Loader />
+       }
        <main className="order-dash-container">
            <Sidebar />
        <div className="dash-order">

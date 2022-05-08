@@ -17,16 +17,20 @@ export default function FeaturedInfo() {
   },[dispatch])
  
   return (
+   
     <div className="featured">
+       {
+          loading && <Loader />
+      }
       <div className="featuredItem">
         <span className="featuredTitle">Revenue</span>
        {
          analysis ? <div className="featuredMoneyContainer">
-         <span className="featuredMoney">£{analysis[1].total}</span>
+         <span className="featuredMoney">£{analysis[1] ? analysis[1].total : 0} </span>
          <span className="featuredMoneyRate">
-           %{Math.floor((analysis[1].total*100) / analysis[0].total - 100)}
+           %{analysis[1] ? Math.floor((analysis[1].total*100) / analysis[0].total - 100) : 0}
            {
-             Math.floor((analysis[1].total*100) / analysis[0].total - 100) < 0 ? 
+             analysis[1] && Math.floor((analysis[1].total*100) / analysis[0].total - 100) < 0 ? 
              <ArrowDownward  className="featuredIcon negative"/>
              :
              <ArrowUpward className="featuredIcon"/>
@@ -43,7 +47,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Sales</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">£4,415</span>
+          <span className="featuredMoney">£</span>
           <span className="featuredMoneyRate">
             -1.4 <ArrowDownward className="featuredIcon negative"/>
           </span>
@@ -53,7 +57,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Cost</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">£2,225</span>
+          <span className="featuredMoney">£</span>
           <span className="featuredMoneyRate">
             +2.4 <ArrowUpward className="featuredIcon"/>
           </span>

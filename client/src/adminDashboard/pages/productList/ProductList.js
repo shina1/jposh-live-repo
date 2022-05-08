@@ -74,7 +74,6 @@ import Loader from "../../../Components/loader/Loader";
 
   return (
   <div>
-    <Topbar />
     <main className="product-list-dash-container">
       <Sidebar />
     {/* {

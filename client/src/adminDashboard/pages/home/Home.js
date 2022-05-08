@@ -5,7 +5,6 @@ import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import "./home.css";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
-import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useDispatch, useSelector } from 'react-redux';
 import { listUsersStats } from '../../../actions/userActions';
@@ -51,7 +50,6 @@ const AdminHome = () => {
 
   return (
     <div >
-      <Topbar />
       <main className='admin-container'>
       <Sidebar />
         <div className="home">

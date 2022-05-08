@@ -18,7 +18,7 @@ import OpenNotificationWithIcon from '../../Components/Notification'
 import Loader from '../../Components/loader/Loader'
 import { Alert } from 'antd'
 import { PRODUCTION_BASE_URL } from '../../utils/requestMethods'
-const {REACT_APP_JPOSH_STRIPE_TEST_KEY , REACT_APP_JPOSH_STRIPE_KEY, NODE_ENV } = process.env;
+const {REACT_APP_JPOSH_STRIPE_KEY, NODE_ENV } = process.env;
 const KEY = REACT_APP_JPOSH_STRIPE_KEY;
 
 
@@ -93,8 +93,7 @@ const onToken = (token) => {
             }
         })
         .catch(err => {
-            console.log(err);
-           
+            throw new Error(err)  
         }
             )
         }

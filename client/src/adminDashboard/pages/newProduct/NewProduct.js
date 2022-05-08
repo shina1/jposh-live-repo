@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { notification, Space } from 'antd';
+import { notification,message, Space, Progress } from 'antd';
 import { createProduct } from "../../../actions/productActions";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
@@ -12,6 +12,7 @@ import Loader from "../../../Components/loader/Loader";
 
 
  const NewProduct = () => {
+   const [uploadProgress, setUploadProgress] = useState(0)
     const  [inputs, setInputs] = useState({})
     // const  [category, setCategory] = useState()
     const [size, setSize] = useState([])
@@ -22,9 +23,8 @@ import Loader from "../../../Components/loader/Loader";
 const dispatch = useDispatch()
 const productCreate = useSelector((state) => state.productCreate)
 
-const {loaidng, success, product}= productCreate
+const {loading, success, product}= productCreate
 
-console.log(inputs);
 
 const handleChange = (e) => {
   e.preventDefault()
@@ -50,6 +50,13 @@ const handleCreate = (e) => {
   const storage = getStorage(app);
   const storageRef = ref(storage, fileName)
 
+  const warning = () => {
+    message.warning('Upload is paused');
+  };
+
+  const success = () => {
+    message.success('Upload is running');
+  };
 
 
 const uploadTask = uploadBytesResumable(storageRef, file);
@@ -63,12 +70,16 @@ uploadTask.on('state_changed',
     // Observe state change events such as progress, pause, and resume
     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    setUploadProgress(progress)
+   
     console.log('Upload is ' + progress + '% done');
     switch (snapshot.state) {
       case 'paused':
+        warning()
         console.log('Upload is paused');
         break;
       case 'running':
+        success()
         console.log('Upload is running');
         break;
     }
@@ -107,11 +118,16 @@ useEffect(() => {
 
   return (
     <div>
-      <Topbar />
+      {
+        loading && <Loader />
+      }
       <main className="newProduct-container">
         <Sidebar />
       <div className="newProduct">
       <h1 className="addProductTitle">New Product</h1>
+      <div className="upload-box">
+       <Progress percent={uploadProgress} status="active" />
+      </div>
       <form className="addProductForm">
         <div className="addProductItem">
           <label>Image</label>

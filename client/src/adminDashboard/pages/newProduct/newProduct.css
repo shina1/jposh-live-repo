@@ -41,3 +41,10 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.upload-box{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+}

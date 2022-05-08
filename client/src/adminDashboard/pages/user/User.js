@@ -9,7 +9,6 @@ import {
 } from "@material-ui/icons";
 import { Link, useParams } from "react-router-dom";
 import "./user.css";
-import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails, listUsers } from "../../../actions/userActions";
@@ -28,7 +27,6 @@ const UserProfileDash = () => {
   }, [dispatch])
   return (
    <div>
-     <Topbar />
      <main className="user-container">
      <Sidebar />
      <div className="user">

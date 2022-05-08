@@ -8,7 +8,6 @@ import Loader from '../loader/Loader'
 
 
 const FilteredProducts = ({product}) => {
-  console.log(product);
   return (
         <div className='filteredProduct-container'>
           {

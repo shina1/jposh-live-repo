@@ -18,7 +18,7 @@ const Success = () => {
   // const data = location.state.data;
   // const cart = location.state.cart;
   const currentUser = useSelector((state) => state.user.userDetials);
-  console.log(currentUser)
+
   
   // useEffect(() => {
   //   const createOrder = async() => {

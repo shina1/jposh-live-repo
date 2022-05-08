@@ -15,10 +15,7 @@ import { deleteOrder, listOrders } from "../../../actions/orderActions";
   const dispatch = useDispatch()
   const orderList = useSelector((state) => state.orderList)
  
-  const {loading, orders} = orderList
-
-  
-  console.log(orders);
+  const {loading, orders} = orderList;
  
 
   const handleDelete = (id) => {
@@ -78,7 +75,6 @@ import { deleteOrder, listOrders } from "../../../actions/orderActions";
 
   return (
   <div>
-    <Topbar />
     <main className="order-list-dash-container">
       <Sidebar />
     {

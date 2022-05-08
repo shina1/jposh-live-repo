@@ -35,13 +35,11 @@ const MyOrders = () => {
 
     const {loading, orders} = orderListMy
 
-    console.log(orders)
 
     const handleDelete = (id) => {
       if (window.confirm("Are you sure You want to delete?"));
       dispatch(deleteOrder(id));
       dispatch(listMyOrders(userId))
-      console.log('clicked');
     };
 
     useEffect(()=> {
