@@ -54,7 +54,7 @@ import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
                  <div className="orderTopLeft">
                     <div className="orderInfoItem">
                        <span className="orderInfoKey">User:</span>
-                       <p className="orderInfoValue">{order.user.email}</p>
+                       <p className="orderInfoValue">{order.user && order.user.email}</p>
                    </div>
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">Delivery Status:</span>
@@ -86,23 +86,23 @@ import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
                    <div className="orderInfoBottom">
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">poastal Code: </span>
-                       <span className="orderInfoValue">{order.shippingAddress.postalCode} </span>
+                       <span className="orderInfoValue">{order && order.shippingAddress.postalCode} </span>
                    </div>
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">City: </span>
-                       <span className="orderInfoValue">{order.shippingAddress.city} </span>
+                       <span className="orderInfoValue">{order && order.shippingAddress.city} </span>
                    </div>
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">Country: </span>
-                       <span className="orderInfoValue">{order.shippingAddress.country}</span>
+                       <span className="orderInfoValue">{order && order.shippingAddress.country}</span>
                    </div>
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">Street: </span>
-                       <span className="orderInfoValue">{order.shippingAddress.address}</span>
+                       <span className="orderInfoValue">{order && order.shippingAddress.address}</span>
                    </div>
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">Total Price: </span>
-                       <span className="orderInfoValue">£ {order.totalPrice}</span>
+                       <span className="orderInfoValue">£ {order && order.totalPrice}</span>
                    </div>
                    {/* <div className="orderInfoItem">
                        <span className="orderInfoKey">discount:</span>
