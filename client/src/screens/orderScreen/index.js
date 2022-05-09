@@ -18,7 +18,7 @@ import OpenNotificationWithIcon from '../../Components/Notification'
 import Loader from '../../Components/loader/Loader'
 import { Alert } from 'antd'
 import { PRODUCTION_BASE_URL } from '../../utils/requestMethods'
-const {REACT_APP_JPOSH_STRIPE_KEY, NODE_ENV } = process.env;
+const {REACT_APP_JPOSH_STRIPE_KEY,REACT_APP_JPOSH_STRIPE_TEST_KEY, NODE_ENV } = process.env;
 const KEY = REACT_APP_JPOSH_STRIPE_KEY;
 
 
@@ -29,6 +29,7 @@ const OrderScreen = () => {
 
     const {id} = useParams();
     const [isOrderPaid, setIsOrderPaid ] = useState(false);
+    const [resp, setResp] = useState('false')
     const orderCreate = useSelector((state) => state.orderCreate);
     const user = useSelector((state) => state.userLogin);
     const cart = useSelector((state) => state.cart);
@@ -85,7 +86,9 @@ const onToken = (token) => {
         if(stripeToken){
              await axios.post(`${PRODUCTION_BASE_URL}checkout/payment`, {headers, stripeToken, amount: order.totalPrice, product: order.orderItems})
         .then(response => {
-            if(!response){ return <Loader />}
+            setResp(response)
+            console.log(response);
+            // if(!response){ return <Loader />}
             if(response.status === 200){
                dispatch(payOrder(id, response))
                setIsOrderPaid(true)
@@ -93,6 +96,7 @@ const onToken = (token) => {
             }
         })
         .catch(err => {
+            console.log(err)
             throw new Error(err)  
         }
             )
@@ -118,6 +122,9 @@ const onToken = (token) => {
       {/* <ResponsiveHeader /> */}
       {
           loading && <Loader />
+      }
+      {
+          !resp && <Loader />
       }
       {
           error && <Message type={"error"} message={"Something went wrong! Check your connection"} />
