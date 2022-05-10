@@ -22,6 +22,9 @@ useEffect(() => {
   return (
     <div className="widgetLg">
       <h3 className="widgetLgTitle">Latest transactions</h3>
+      {
+        loading && < Loader />
+      }
       <table className="widgetLgTable">
         <tr className="widgetLgTr">
           <th className="widgetLgTh">Customer</th>

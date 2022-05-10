@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Modal, Button, Space } from 'antd';
 import { createOrder, deliverOrder, getOrderDetails, payOrder,  } from '../../actions/orderActions'
-import ResponsiveHeader from '../../Components/Header-component/ResponsiveHeader'
-import { ORDER_CREATE_RESET, ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../../constants/orderConstants'
-import { USER_DETAILS_RESET } from '../../constants/userConstants'
+
+import { ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../../constants/orderConstants'
 import Message from '../../Components/message/Message'
 import logo from '../../assets/images/logo.ico'
 
@@ -14,9 +12,7 @@ import "./style.css"
 // import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
 import axios from 'axios'
 import StripeCheckout from 'react-stripe-checkout'
-import OpenNotificationWithIcon from '../../Components/Notification'
 import Loader from '../../Components/loader/Loader'
-import { Alert } from 'antd'
 import { PRODUCTION_BASE_URL } from '../../utils/requestMethods'
 const {REACT_APP_JPOSH_STRIPE_KEY,REACT_APP_JPOSH_STRIPE_TEST_KEY, NODE_ENV } = process.env;
 const KEY = REACT_APP_JPOSH_STRIPE_KEY;
