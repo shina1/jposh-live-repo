@@ -16,11 +16,23 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 const app = express();
 
-// app.use(cors({
-//   origin: '*'
-// }));
+app.use(cors({
+  origin: '*'
+}));
 
-app.use(cors())
+
+
+
+// app.use(cors())
+// if (process.env.NODE_ENV === "production") {
+
+//   app.use(express.static('client/built'));
+//   app.get("*", (req, res) => {
+//       res.sendFile(require('path')
+//           .resolve(__dirname, 'client', 'build', 'index.html'));
+//   })
+// }
+
 app.use(express.json());
 connectDB();
 // user endpoints
@@ -44,6 +56,14 @@ app.use('/api/v1/checkout', paymentRoute);
 app.use(notFound)
 app.use(errorHandler)
 
+
+const root = require('path').join(__dirname, 'client', 'build')
+app.use(express.static(root));
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
+})
+
+// app.use(express.static(path.join(__dirname, 'build')));
 
 // const PORT = process.env.PORT ||  5500;
 const PORT = 5500
