@@ -1,17 +1,17 @@
-import React, { Suspense, lazy }  from 'react'
+import React, { Suspense }  from 'react'
 
 import Loader from '../../Components/loader/Loader'
 // import AllProductsComponent from '../../Components/Product/allProducts';
 import './style.css'
 
 // const ResponsiveHeader = React.lazy(() => import('../../Components/Header-component/ResponsiveHeader'));
-const CarouselSlider = React.lazy(() => import('../../Components/SlidderComponent/Carousel'));
-const About= React.lazy(() => import('../../Components/About'));
-const Categories = React.lazy(() => import('../../Components/Categories'));
-const Newsletter = React.lazy(() => import('../../Components/Newsletter'));
-const Products = React.lazy(() => import('../../Components/Product/Products'));
-const Testimonial= React.lazy(() => import('../../Components/Testimonials'));
-const AllProductsComponent = React.lazy(() => import('../../Components/Product/allProducts'));
+import CarouselSlider  from '../../Components/SlidderComponent/Carousel';
+import About from '../../Components/About';
+import Categories  from '../../Components/Categories';
+import Newsletter  from '../../Components/Newsletter';
+import Products  from '../../Components/Product/Products';
+import Testimonial from '../../Components/Testimonials';
+import AllProductsComponent  from '../../Components/Product/allProducts';
 // const Footer = React.lazy(() => import('../../Components/Footer'));
 
 
