@@ -71,7 +71,7 @@ const SingleProduct = () => {
             product ? 
         <section className='single-product-inner-container'>
             <div className='image-cont'>
-               {product && <SingleProductReviewCarousel mainImage={product.img} frontImage={product.img} backImage={product.img} /> }
+               {product && <SingleProductReviewCarousel mainImage={product.img} frontImage={product.frontImg ? product.frontImg : product.img} backImage={product.backImg ? product.backImg : product.img} /> }
                 {
                     product.video && 
                     <video controls autoPlay={true} muted playsInline >
