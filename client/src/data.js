@@ -30,7 +30,7 @@ export const sliderItems = [
         id: 1,
         img: slideImage1,
         title: "SUMMER SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 10% OFF FOR NEW ARRIVALS.",
         bg: "#EFE6E5"
     },
     {
@@ -44,7 +44,7 @@ export const sliderItems = [
         id: 3,
         img: slideImage3,
         title: "POPULAR SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 10% OFF FOR NEW ARRIVALS.",
         bg: "#EFE6E5"
     }
 ]

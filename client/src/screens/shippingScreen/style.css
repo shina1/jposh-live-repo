@@ -1,13 +1,14 @@
 .shipping-container{
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 0 5px;
+    height: auto;
 }
 
 .shipping-inner-container{
     width: 100%;
     margin: 10px auto;
     padding: 20px 5px;
-    height: 100vh;
+    height: auto;
 }
 .shipping-cont-title{
     width: 100%;
@@ -64,6 +65,7 @@
     .shipping-form-cont{
         width: 100%;
         padding: 5px;
+        height: auto;
     }
 
     .shipping-form-cont form .shipping-form-item{

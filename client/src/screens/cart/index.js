@@ -3,6 +3,15 @@ import { Modal } from 'antd';
 import Footer from '../../Components/Footer'
 import ResponsiveHeader from '../../Components/Header-component/ResponsiveHeader'
 import { Add, Remove, Delete } from '@material-ui/icons'
+// for dialog form box
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+// dailog form box impots ends
 import styledComponents from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
@@ -22,7 +31,17 @@ height: 1px;
 const Cart = () => {
     const [cartQuantity, setCartQuantity] = useState(1)
     const navigate = useNavigate()
-    // const [stripeToken, setStripeToken] = useState(null)
+    // for dialog form box
+    const [open, setOpen] = React.useState(false);
+
+    // const handleClickOpen = () => {
+    //   setOpen(true);
+    // };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+    // dialog form box ends
     const  dispatch = useDispatch()
     const cart = useSelector((state) => state.cart)
     const userLogin = useSelector((state) => state.userLogin)
@@ -58,6 +77,7 @@ const Cart = () => {
     const handleCheckout = () => {
         if(userLogin.userInfo !== null){
             navigate('/shipping')
+            // setOpen(true);
         }
         else(
             navigate('/login')
@@ -135,7 +155,7 @@ const Cart = () => {
                     </div>
                     <div className='summary-item'>
                         <h4>Tax/VAT</h4>
-                        <span>£ {cart.cartItems.reduce((acc, item) => acc + item.vat ,0)}</span>
+                        <span>£ {(cart.cartItems.reduce((acc, item) => acc + item.vat ,0)).toFixed(2)}</span>
                     </div>
                     <div className='summary-item'>
                         <h4 className='total'>Total</h4>
@@ -144,6 +164,66 @@ const Cart = () => {
                     {
                             <button className='checkout-btn' disabled={total <= 0 } onClick={handleCheckout}>CHECKOUT NOW</button>
                     }
+
+                    <p>Please note that shipping price is not included as it varies with location.</p>
+                    {/* dialog form for collection shipping detials */}
+                    {/* <Dialog open={open} onClose={handleClose}>
+                        <DialogTitle>shipping Address</DialogTitle>
+                        <DialogContent>
+                        <DialogContentText>
+                            Please fill in your WhatsApp number in the Phone Number field.
+                        </DialogContentText>
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="address"
+                            label="Home Address"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="phoneNumber"
+                            label="Phone Number (whatsapp)"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                         <TextField
+                            autoFocus
+                            margin="dense"
+                            id="city"
+                            label="City"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                         <TextField
+                            autoFocus
+                            margin="dense"
+                            id="postalcode"
+                            label="Postal Code"
+                            type="email"
+                            fullWidth
+                            variant="standard"
+                        />
+                         <TextField
+                            autoFocus
+                            margin="dense"
+                            id="countyr"
+                            label="Country"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                        />
+                        </DialogContent>
+                        <DialogActions>
+                        <Button onClick={handleClose}>Cancel</Button>
+                        <Button onClick={handleClose}>CONTINUE</Button>
+                        </DialogActions>
+                    </Dialog> */}
                 </div>
             </div>
         </section>

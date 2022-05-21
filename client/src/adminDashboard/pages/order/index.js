@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import "./style.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../../../Components/message/Message";
 import Loader from "../../../Components/loader/Loader";
 import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
 
@@ -18,6 +17,7 @@ import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
      const orderDetails = useSelector((state) => state.orderDetails)
      const orderDelivery= useSelector((state) => state.orderDelivery)
     const{loading, order} =  orderDetails;
+
 
      useEffect(() => {
          dispatch(getOrderDetails(orderId))
@@ -91,6 +91,10 @@ import { deliverOrder, getOrderDetails } from "../../../actions/orderActions";
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">City: </span>
                        <span className="orderInfoValue">{order && order.shippingAddress.city} </span>
+                   </div>
+                   <div className="orderInfoItem">
+                       <span className="orderInfoKey">Phone Number: </span>
+                       <span className="orderInfoValue">{order && order.shippingAddress.phoneNuber || '00-000-000'} </span>
                    </div>
                    <div className="orderInfoItem">
                        <span className="orderInfoKey">Country: </span>

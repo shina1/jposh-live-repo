@@ -13,13 +13,14 @@ const Shipping = () => {
     const shippingAddress = cart.shippingAddress
 
     const [address, setAddress] = useState(shippingAddress.address || '')
+    const [phoneNumber, setPhoneNumber] = useState(shippingAddress.phoneNumber || '')
     const [city, setCity] = useState(shippingAddress.city || '')
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode || '')
     const [country, setCountry] = useState(shippingAddress.country || '')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(saveShippingAddress({address, city, postalCode, country}))
+        dispatch(saveShippingAddress({address, phoneNumber, city, postalCode, country}))
     
         navigate('/payment')
     }
@@ -33,6 +34,10 @@ const Shipping = () => {
                     <div className='shipping-form-item'>
                         <label>Address</label>
                         <input type='text' name='address' placeholder='Enter your address' value={address} required onChange={(e) => setAddress(e.target.value)}/>
+                    </div>
+                    <div className='shipping-form-item'>
+                        <label>Phone Number</label>
+                        <input type='text' name='phoneNumber' placeholder='Enter your phone number (whatsapp)' value={phoneNumber} required onChange={(e) => setPhoneNumber(e.target.value)}/>
                     </div>
                     <div className='shipping-form-item'>
                         <label>City</label>

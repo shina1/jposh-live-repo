@@ -78,13 +78,18 @@ const placeOrderHandler = () => {
                             <h4>Email : <span>{userDets.email}</span></h4>
                         </div>
                         <div className='box-item'>
+                            <h4>Phone Number : <span>{cart && cart.shippingAddress.phoneNumber}</span></h4>
+                        </div>
+                        <div className='box-item'>
                             <h4>Address : 
                                 <span>
-                                {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
-                                {cart.shippingAddress.postalCode},{' '}
-                                {cart.shippingAddress.country}
+                                {cart && cart.shippingAddress.address}{' '},{cart && cart.shippingAddress.city}{' '},{' '}
+                                {cart && cart.shippingAddress.country}
                                 </span>
                             </h4>
+                        </div>
+                        <div className='box-item'>
+                            <h4>Postal Code : <span>{cart && cart.shippingAddress.postalCode}</span></h4>
                         </div>
                     </div>
                     <hr />
