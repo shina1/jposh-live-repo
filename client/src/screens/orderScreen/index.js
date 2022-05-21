@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { Modal, Button, Space } from 'antd';
+import { Modal, Button, Space, Alert } from 'antd';
 import { createOrder, deliverOrder, getOrderDetails, payOrder,  } from '../../actions/orderActions'
 
 import { ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../../constants/orderConstants'
@@ -52,6 +52,20 @@ cart.totalPrice = (
     Number(cart.itemsPrice)
 ).toFixed(2)
 
+// const onClose = (e) => {
+//     console.log(e, 'I was closed.');
+//   };
+
+// const alertFunc = () => {
+//    return <Alert
+//                 message="Payment not successfull!"
+//                 description="Your payment was not complete, please check your connection and try again."
+//                 type="error"
+//                 closable
+//                 onClose={onClose}
+//     />
+// }
+
 // modal for displaying success payment
 function info() {
     Modal.info({
@@ -89,10 +103,12 @@ const onToken = (token) => {
                dispatch(payOrder(id, response))
                setIsOrderPaid(true)
                info()
+            }else{
+                alert('Your payment was not complete, please check your connection and try again.')
             }
         })
         .catch(err => {
-            console.log(err)
+            err && alert('Your payment was not complete, please check your connection and try again.');
             throw new Error(err)  
         }
             )

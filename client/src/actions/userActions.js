@@ -14,6 +14,7 @@ export const  login = (email, password) => async(dispatch)=> {
             },
         }
         dispatch({
+            loading: true,
             type: USER_LOGIN_REQUEST,
         })
        
@@ -21,6 +22,7 @@ export const  login = (email, password) => async(dispatch)=> {
         const { data } = await axios.post(`${PRODUCTION_BASE_URL}auth/login`, {email, password}, config)
 
         dispatch({
+            loading: false,
             type: USER_LOGIN_SUCCESS,
             payload: data
         })

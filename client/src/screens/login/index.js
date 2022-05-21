@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styledComponents from 'styled-components'
 import { login } from '../../actions/userActions'
+import Loader from '../../Components/loader/Loader'
 
 import './style.css'
 const Error = styledComponents.span`
@@ -31,10 +32,14 @@ const Login = () => {
   },[navigate, userInfo, redirect])
   return (
     <main className='login-main-cont'>
+      {
+        loading && <Loader />
+      }
       <div className='login-title-container'>
           <h2>Welcome</h2>
           <p>Don't have a account? <span><Link to={"/register"}>Sign Up</Link></span></p>
       </div>
+      
       <div className='login-form-container'>
           <form>
               <input type='email' required placeholder='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
