@@ -28,6 +28,8 @@ import { PhotoCamera } from "@material-ui/icons";
     const [fileFront, setFileFront] = useState(null)
     const [fileBack, setFileBack] = useState(null)
     
+
+    const fileList = [];
   
 
 
@@ -213,16 +215,15 @@ useEffect(() => {
             <option>choose an option</option>
             <option value='women'>Women </option>
             <option value='men'>Men</option>
-            <option value='Accessries'>Accessries</option>
-            <option value='track suits'>Track suits</option>
-            <option value='Aso ebi'>Aso ebi</option>
-            <option value='Adire/Bubu dress'>Adire/Bubu dress</option>
-            <option value='Ankara set'>Ankara set</option>
-            <option value='Bonnet cap'>Bonnet cap</option>
-            <option value='Braided head band'>Braided head band</option>
-            <option value='Sequins head band'>Sequins head band</option>
-            <option value='Pallazo'>Pallazo</option>
-            <option value='others'>Others</option>
+            <option value='accessories'>Accessries</option>
+            <option value='track-suits'>Track suits</option>
+            <option value='aso-ebi'>Aso ebi</option>
+            <option value='adireBubu-dress'>Adire/Bubu dress</option>
+            <option value='ankara-set'>Ankara set</option>
+            {/* <option value='bonnet-cap'>Bonnet cap</option>
+            <option value='braided-head-band'>Braided head band</option>
+            <option value='sequins-head-band'>Sequins head band</option> */}
+            <option value='2pieces-set'>2pieces set</option>
           </select>
         </div>
         <div className="addProductItem">

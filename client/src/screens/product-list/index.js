@@ -3,16 +3,14 @@ import { useLocation } from 'react-router-dom'
 import ResponsiveHeader from '../../Components/Header-component/ResponsiveHeader'
 import Products from '../../Components/Product/Products'
 import Newsletter from '../../Components/Newsletter'
-import Footer from '../../Components/Footer/index.js'
 
 import './style.css'
 import FilteredProductsDisp from '../../Components/Product/filteredProductDisplay'
-import { listAllProducts } from '../../actions/productActions'
-import { useDispatch, useSelector } from 'react-redux'
 
 
 const ProductList = () => {
   const location = useLocation()
+  
   const category = location.pathname.split("/")[2];
   const [filters, setFilter] = useState({})
   const [sort, setSort] = useState("Newest")
@@ -69,6 +67,9 @@ const ProductList = () => {
       </div>
       <FilteredProductsDisp  category={category} filters={filters} sort = {sort}/>
       <Products category={category} filters={filters} sort = {sort}/>
+      {/* {
+        console.log(category)
+      } */}
       <Newsletter />
       {/* <Footer /> */}
     </div>

@@ -75,7 +75,8 @@ export const listProductByCategory = (category) => async(dispatch) => {
     try {
         dispatch({type: PRODUCT_CATEGORY_LIST_REQUEST})
 
-        const {data} = await axios.get(category ? `${PRODUCTION_BASE_URL}products?category=${category.toLowerCase()}` : `${PRODUCTION_BASE_URL}products` )
+        const {data} = await axios.get(category ? `${PRODUCTION_BASE_URL}products?category=${category}` : `${PRODUCTION_BASE_URL}products` )
+
 
         dispatch({
             type: PRODUCT_CATEGORY_LIST_SUCCESS,
@@ -111,7 +112,6 @@ export const createProduct = (product) => async(dispatch, getState) => {
         }
 
         const { data } = await axios.post(`${PRODUCTION_BASE_URL}products/`, product, config)
-        console.log('data from creating product action',data);
         dispatch({
             type: PRODUCT_CREATE_SUCCESS,
             payload: data,

@@ -89,7 +89,7 @@ const CategoryItem = ({category}) => {
   }, [dispatch])
   return (
     <Container>
-            <Link to={`/products/${category.cat}`}>
+            <Link to={`/products/${category.catValue}`}>
               <Image src={category.img} alt='categories'/>
               <InfoCont>
                   <Title>{category.cat}</Title>

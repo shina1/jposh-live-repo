@@ -55,50 +55,50 @@ export const categories = [
     {
         id: 1,
         img: slideImageCat1,
-        no: "17 items",
         cat: "women",
+        catValue: "women"
     },
     {
         id: 2,
         img: maleCat,
-        no: "25 items",
         cat:"Men",
+        catValue: "men"
     },
     {
         id: 3,
         img: accessories,
-        no: "32 items",
         cat: "accessories",
+        catValue: "accessories"
     },
     {
         id: 4,
         img: Jumpsuits,
-        no: "58 items",
         cat: "Track suits",
+        catValue: "track-suits"
     },
     {
         id: 5,
         img: asoEbi,
-        no: "39 items",
-        cat: "Aso ebi",
+        cat: "Aso Ebi",
+        catValue: "aso-ebi"
     },
     {
         id: 6,
         img: adireBubu,
-        no: "56 items",
         cat: "Adire/Bubu dress",
+        catValue: "adireBubu-dress"
     },
     {
         id: 7,
         img: slideImage1,
-        no: "5 items",
         cat: "Ankara set",
+        catValue: "ankara-set"
     },
     {
         id: 8,
         img: palazo,
-        no: "310 items",
         cat: "2pieces set",
+        catValue: "2pieces-set"
     },
     // {
     //     id: 11,
