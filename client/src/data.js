@@ -17,6 +17,8 @@ import Jumpsuits from './assets/images/ILU_1557.jpg'
 import asoEbi from './assets/images/aso-ebi.jpeg'
 import adireBubu from './assets/images/adire-bubu.jpeg'
 import palazo from './assets/images/palazo.jpeg'
+import fabricStack from './assets/images/fabric-stack.jpeg'
+import children from './assets/images/children.jpeg'
 // testimonial images
 
 import custImage1 from './assets/images/cust1.png'
@@ -24,6 +26,7 @@ import custImage2 from './assets/images/cust2.jfif'
 import custImage3 from './assets/images/cust3.jfif'
 import custImage4 from './assets/images/cust4.jfif'
 
+// fabric-stack
 
 export const sliderItems = [
     {
@@ -78,9 +81,9 @@ export const categories = [
     },
     {
         id: 5,
-        img: asoEbi,
-        cat: "Aso Ebi",
-        catValue: "aso-ebi"
+        img: fabricStack,
+        cat: "Fabrics",
+        catValue: "fabrics"
     },
     {
         id: 6,
@@ -100,12 +103,12 @@ export const categories = [
         cat: "2pieces set",
         catValue: "2pieces-set"
     },
-    // {
-    //     id: 11,
-    //     img: palazo,
-    //     no: "29 items",
-    //     cat: "Pallazo",
-    // }
+    {
+        id: 11,
+        img: children,
+        cat: "Children",
+        catValue: "children"
+    }
 ]
 
 // Popular Products
