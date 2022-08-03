@@ -174,7 +174,7 @@ useEffect(() => {
          
         </div>
         <div className="addProductItem">
-          <label>Name</label>
+          <label>Name (Name you want to give the new product)</label>
           <input type="text" placeholder="Product Name" name='title' onChange={handleChange} required/>
         </div>
         <div className="addProductItem">
@@ -210,25 +210,24 @@ useEffect(() => {
           <input type="number" placeholder="Product Discount Price" name='discoutPrice' onChange={handleChange}/>
         </div>
         <div className="addProductItem">
-          <label>Category</label>
+          <label>Category (What category would you like this product to appear under)</label>
           <select name='category' onChange={handleChange} required>
             <option>choose an option</option>
             <option value='women'>Women </option>
             <option value='men'>Men</option>
             <option value='accessories'>Accessries</option>
             <option value='track-suits'>Track suits</option>
-            <option value='aso-ebi'>Aso ebi</option>
+            <option value='fabrics'>Fabrics</option>
             <option value='adireBubu-dress'>Adire/Bubu dress</option>
             <option value='ankara-set'>Ankara set</option>
-            {/* <option value='bonnet-cap'>Bonnet cap</option>
-            <option value='braided-head-band'>Braided head band</option>
-            <option value='sequins-head-band'>Sequins head band</option> */}
+            <option value='children'>Children</option>
             <option value='2pieces-set'>2pieces set</option>
+            <option value='bridals-asoEbi'>Bridals/Aso-Ebi</option>
           </select>
         </div>
         <div className="addProductItem">
           <label>Description</label>
-          <textarea name="desc" rows="10" cols="50" maxlength="150" placeholder="Product Description" onChange={handleChange} required></textarea>
+          <textarea name="desc" rows="30" cols="100" maxlength="550" placeholder="Product Description" onChange={handleChange} required></textarea>
         </div>
         <div className="addProductItem">
           <label>Size</label>

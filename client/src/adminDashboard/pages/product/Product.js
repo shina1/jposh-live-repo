@@ -16,17 +16,20 @@ import Loader from "../../../Components/loader/Loader";
 
  const DashProduct = () => {
      const params = useParams()
-     
+     const [uploadProgress, setUploadProgress] = useState(0)
+     const [urls, setUrls] = useState([]);
      const  [inputs, setInputs] = useState({})
      const [size, setSize] = useState([])
      const [color, setColor] = useState([])
-     
+     const [images, setImages] = useState([]);
      const dispatch = useDispatch()
 
      const productId = params.productId;
      const productDetails = useSelector((state) => state.productDetails)
      const productUpdate = useSelector((state) => state.productUpdate)
     const{loading, product} =  productDetails
+
+    console.log('this are the product details',product);
 
     const [file, setFile] = useState(null)
 
@@ -36,15 +39,24 @@ import Loader from "../../../Components/loader/Loader";
           return {...prev, [e.target.name]: e.target.value}
         })
       }
+
       const handleColors = (e) => {
         e.preventDefault()
-        setColor(e.target.value.split(','))
+        setColor(product.color || e.target.value.split(','))
       }
       const handleSizes = (e) => {
         e.preventDefault()
-        setSize(e.target.value.split(','))
+        setSize(product.size || e.target.value.split(','))
       }
 
+      const handleImgChange = (e) => {
+
+        for (let i = 0; i < e.target.files.length; i++) {
+          const newImage = e.target.files[i];
+          newImage["id"] = Math.random();
+          setImages((prevState) => [...prevState, newImage]);
+        }
+      }
      useEffect(() => {
          dispatch(listProductDetails(productId))
      }, [dispatch, productId])
@@ -55,50 +67,74 @@ import Loader from "../../../Components/loader/Loader";
         // todo
         // unique identifier for firebase = jposh-4046b
         // create a unique file name for the images
-        const fileName  = file ? new Date().getTime() + file.name  : product.img
+        e.preventDefault()
+        const urlList = [];
+        const warning = (info) => {
+          // message.warning(info);
+        };
+    
+      const success = () => {
+        // message.success('Upload is running');
+        console.log('Upload is running');
+      };
+      // todo
+      // unique identifier for firebase = jposh-4046b
+      // create a unique file name for the images
         const storage = getStorage(app);
-        const storageRef = ref(storage, fileName)
+        // const fileName = new Date().getTime() + file.name;
       
-      
-      
-      const uploadTask = uploadBytesResumable(storageRef, file);
-      
-      // Register three observers:
-      // 1. 'state_changed' observer, called any time the state changes
-      // 2. Error observer, called on failure
-      // 3. Completion observer, called on successful completion
-      uploadTask.on('state_changed', 
-        (snapshot) => {
-          // Observe state change events such as progress, pause, and resume
-          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-          switch (snapshot.state) {
-            case 'paused':
-              console.log('Upload is paused');
-              break;
-            case 'running':
-              console.log('Upload is running');
-              break;
+      images.forEach((image) => {
+        
+        const storageRef = ref(storage, `/images/${new Date().getTime() + image.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, image);
+    
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress =
+              Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+              setUploadProgress(progress)
+            console.log(`Upload is ${progress}% done`);
+            switch (snapshot.state) {
+              case 'paused':
+                warning()
+                console.log('Upload is paused');
+                break;
+              case 'running':
+                success()
+                console.log('Upload is running');
+                break;
+            }
+          },
+          (error) => {
+            if(error){
+              Message('error', 'file upload failed')
+            }
+            console.log(error);
+          },
+          () => {
+            console.log(`Upload  is complete, fetching URL...`);
+            getDownloadURL(storageRef)
+              .then((url) => {
+                setUrls((prevState) => [...prevState, url]);
+                urlList.push(url)
+                if(urlList.length === 3){
+                  const product = {...inputs, size, color, img: product.img || urlList[0], frontImg: product.frontImg || urlList[1], backImg: product.backImg || urlList[2]};
+                  dispatch(updateProduct(product, productId))
+                }
+              })
+              .catch((error) => {
+                if(error){
+                  Message('error', 'file upload failed')
+                }
+                console.log(error);
+              });
           }
-        }, 
-        (error) => {
-          // Handle unsuccessful uploads
-          if(error){
-            Message('error', 'file upload failed')
-          }
-        }, 
-        () => {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            const product = {...inputs, size, color, img: downloadURL};
-      
-            dispatch(updateProduct(product, productId))
-          });
-        }
-      );
+        );
+      });  
       }
+
+      
 
   return (
    <div>
@@ -206,7 +242,7 @@ import Loader from "../../../Components/loader/Loader";
                       <label for="file">
                           <Publish/>
                       </label>
-                      <input type="file" id="file"   onChange={(e) => setFile(e.target.files[0])}/>
+                      <input type="file" id="file"  onChange={handleImgChange}  accept="image/png , image/jpeg, image/webp"/>
                   </div>
                   <button className="productButton" onClick={handleUpdate}>Update</button>
               </div>

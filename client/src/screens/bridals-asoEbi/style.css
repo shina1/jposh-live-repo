@@ -1,0 +1,178 @@
+.brida-Product-container{
+    width: 80%;
+    margin: 40px auto 10px auto; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    padding:20px;
+    height:auto;
+}
+
+.bridal-productWrapper{
+    margin: 20px 0;
+    height: auto;
+}
+.bridal-prod-img-wrapper{
+    /* width: 245px; */
+    height: 450px;
+    
+}
+.bridal-prod-img-wrapper img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 4s;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.bridal-prod-img-wrapper:hover img{
+    transform: scale(1.01);
+    transition: all 0.5s ease-in;
+}
+
+.loader-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+/* product wrapper footer */
+.bridal-productWrapper-footer{
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .inner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-details-foot{
+    width: 100%;
+    /* text-align: left; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  .product-details-foot .foot-prod-name{
+    width: 60%;
+    text-align: left;
+  }
+  .disc-price h4:nth-child(1){
+    text-decoration: line-through;
+  }
+  .disc-price h4:nth-child(2){
+    color: darkred;
+    font-size: 15px;
+  }
+  /* product.discoutPrice */
+  .bridal-product-details-foot .bridal-foot-prod-price{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    /* text-align: right; */
+  }
+  .footer-icons{
+    width: 30%;
+  }
+  .ratings{
+    width: 70%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+  }
+  .star-group{
+    flex: 1;
+  }
+  .reviews{
+    flex: 1;
+    padding: 0;
+    margin-top: -5px;
+  }
+  .ratings .MuiSvgIcon-root{
+    font-size: 20px !important;
+  }
+  .footer-icons{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-icons .MuiSvgIcon-root{
+    font-size: 20px !important;
+  }
+  .bridal-product-details-foot h4{
+    font-size: 18px;
+  }
+  span{
+    font-size: 14px;
+    color: rgba(18, 18, 18, 0.75)
+  }
+  
+  /* media query */
+  @media screen and (max-width:576px) {
+      .brida-Product-container {
+          height: auto;
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)
+          );
+          grid-gap: 1rem;
+      }
+  
+      .popularProduct-container{
+        /* width: 250px; */
+        height: auto;
+      }
+      /* product wrapper styling */
+    
+      .bridal-productWrapper{
+        height: auto;
+      }
+      
+      .bridal-prod-img-wrapper{
+        width: 100%;
+        height: 65vh;      
+      }
+      .bridal-prod-img-wrapper img{
+          display: block;
+          width: 100%;
+          height: 100%;
+          transition: transform 4s;
+          cursor: pointer;
+          object-fit: cover;
+      }
+  
+     
+    
+      .inner{
+        width: 100%;
+       flex-direction: column;
+      }
+      .ratings{
+        width: 100%;
+      }
+      .footer-icons{
+        width: 100%;
+      }
+      .star-group{
+        width: 100%;
+      }
+      .bridal-product-details-foot{
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+    /* @media screen and (min-width:992px) {
+      .productContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 1em;
+      }
+    } */
