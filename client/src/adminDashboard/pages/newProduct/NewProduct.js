@@ -222,6 +222,7 @@ useEffect(() => {
             <option value='ankara-set'>Ankara set</option>
             <option value='children'>Children</option>
             <option value='2pieces-set'>2pieces set</option>
+            <option value='bridals-asoEbi'>Bridals/Aso-Ebi</option>
           </select>
         </div>
         <div className="addProductItem">

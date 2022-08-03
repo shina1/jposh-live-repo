@@ -12,6 +12,7 @@ import Newsletter  from '../../Components/Newsletter';
 import Products  from '../../Components/Product/Products';
 import Testimonial from '../../Components/Testimonials';
 import AllProductsComponent  from '../../Components/Product/allProducts';
+import BridalsComponent from '../../Components/Aso-Ebi-Bridals';
 // const Footer = React.lazy(() => import('../../Components/Footer'));
 
 
@@ -25,6 +26,7 @@ const Home = () => {
         <About />
         <Categories />
         <AllProductsComponent />
+        <BridalsComponent />
         <Products />
         <Testimonial />
         <Newsletter />

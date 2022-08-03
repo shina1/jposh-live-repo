@@ -31,6 +31,7 @@ import AboutScreen from './screens/aboutPage';
 import Categories from './Components/Categories/index';
 import MyOrders  from './screens/myOrders';
 import DashOrderInfo  from './adminDashboard/pages/order';
+import BridalsAndAsoEbiScreen from './screens/bridals-asoEbi';
 
 
 
@@ -69,6 +70,7 @@ const App = () => {
         <Route path='/about-us' element={<AboutScreen />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/my-orders' element={<MyOrders />} />
+        <Route path='/bridals-asoebi' element={ <BridalsAndAsoEbiScreen />} />
       </Routes>
       <Footer />
       </Suspense>

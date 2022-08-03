@@ -1,0 +1,60 @@
+.box{
+    margin:100px auto;
+}
+
+.bridals-component-container{
+    /* border: 2px solid red; */
+    background-image: linear-gradient(to right bottom, rgba(18,18,18,0.8), rgba(18,18,18,0.8)), url(../../assets/images/aso-ebi-img-1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 0;
+    height: auto;
+    width: 100%;
+}
+.in-cont{
+    /* border: 2px solid green; */
+    width: 60%;
+    text-align: center;
+    margin: 10px auto;
+    padding: 20px;
+}
+.in-cont h2{
+    color: #f7f7f7;
+    text-shadow: 0 0 4px rgb(0 0 0 / 40%);
+    font-size: 4.33333em;
+    letter-spacing: 2px;
+}
+.in-cont p{
+    color: #fff;
+    margin: 0 0 19.44444px;
+    font-size: 1.3em;
+    text-shadow: 0 0 4px rgb(0 0 0 / 40%);
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.bridals-btn{
+    background-color: #C09621;
+    /* background-color: #f7f7f7; */
+    color: #f7f7f7;
+    text-shadow: 0 0 4px rgb(0 0 0 / 40%);
+    width: 25%;
+
+}
+
+.chat{
+    /* border: 2px solid red; */
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    background: #25D366;
+    /* background-color: rgba(18, 68, 64, 0.5); */
+    font-weight: bolder;
+    font-size: 15px;
+}

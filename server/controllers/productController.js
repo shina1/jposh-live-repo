@@ -44,7 +44,7 @@ const editProduct = asyncHandler(
         
     const editedProduct = await Products.findByIdAndUpdate(
                 req.params.id, 
-                {$set: req.body}, 
+                {...req.body}, 
                 {new: true}
             );
     res.status(200).json(editedProduct)
