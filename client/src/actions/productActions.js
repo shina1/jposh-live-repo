@@ -110,14 +110,15 @@ export const createProduct = (product) => async(dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-
-        const { data } = await axios.post(`${PRODUCTION_BASE_URL}products/`, product, config)
+        
+        const { data } = await axios.post(`${PRODUCTION_BASE_URL}products/create`, product, config)
         dispatch({
             type: PRODUCT_CREATE_SUCCESS,
             payload: data,
         })
         
     } catch (error) {
+      console.log(error);
         const message =
         error.response && error.response.data.message
           ? error.response.data.message
