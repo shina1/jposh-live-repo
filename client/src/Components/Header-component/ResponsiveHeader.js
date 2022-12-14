@@ -38,7 +38,7 @@ const ResponsiveHeader = () => {
       <div>
     <div className='header-top'>
     <marquee scrolldelay='100' behavior='slide'> <p>Free U.K. Shipping on orders over £199</p> </marquee>
-    <marquee scrolldelay='100' behavior='slide'> <p>All items ship from the UK. <br /> Pls allow 1-3 days for dispatch of your orders. </p> </marquee>
+    <marquee scrolldelay='100' behavior='slide'> <p>All items ship from the UK. <br /> Pls allow 5-7 days for dispatch of your orders within UK <br/> and 10-15 days for orders outside UK. </p> </marquee>
     {/* All items ship from the UK. Pls allow 1-3 days for dispatch of your orders. */}
     </div>
     <div className="header">
