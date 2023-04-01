@@ -20,21 +20,20 @@ const HeroSection = () => {
         </div>
         {/* tags */}
         {/* c09621 */}
-        <div className='flex flex-col mt-4 lg:flex-row lg:flex-nowrap lg:gap-x-4 lg:mt-7'>
-            <span className='text-dark-light font-semibold italic'>Popular Tags:</span>
+        <div className='flex flex-col mt-4 lg:flex-row lg:items-start lg:flex-nowrap lg:gap-x-4 lg:mt-7 w-full'>
+            <span className='text-dark-light font-semibold italic mt-2 lg:mt-4'>Popular Tags:</span>
             <ul className='flex flex-wrap gap-x-2.5 gap-y-2.5 mt-3'>
-                <li className='rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold'>Design</li> 
-                <li className='rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold'>User Experience</li>
-                <li className='rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold'>User Interface</li>
+            
                 <li className='rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold'>Asho Ebi</li>
                 <li className='rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold'>Fashion</li>
                 <li className='rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-semibold'>Nigeria</li>
+                
             </ul>
         </div>
       </div>
       {/* hero right side */}
-      <div className='hidden lg:block'>
-        <img src={images.HeroImage} alt="users are reading articles"/>
+      <div className='hidden lg:block lg:w-1/2'>
+        <img className='w-full' src={images.HeroImage} alt="users are reading articles"/>
       </div>
     </section>
   )
