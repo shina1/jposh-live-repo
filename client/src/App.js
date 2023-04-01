@@ -33,6 +33,7 @@ import MyOrders  from './screens/myOrders';
 import DashOrderInfo  from './adminDashboard/pages/order';
 import BridalsAndAsoEbiScreen from './screens/bridals-asoEbi';
 import Blog from './screens/blog';
+import Read from './screens/blog/read';
 
 
 
@@ -72,6 +73,7 @@ const App = () => {
         <Route path='/categories' element={<Categories />} />
         <Route path='/my-orders' element={<MyOrders />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/blog/:blogId' element={<Read />} />
         <Route path='/bridals-asoebi' element={ <BridalsAndAsoEbiScreen />} />
       </Routes>
       <Footer />
