@@ -59,6 +59,9 @@ const ResponsiveHeader = () => {
             <a href="/about-us">ABOUT</a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
+            <a href="/blog">BLOG</a>
+          </li>
+          <li className="option" onClick={closeMobileMenu}>
             <Link to={"/contact"}>CONTACT</Link>
           </li>
           <li className="option mobile-option">
