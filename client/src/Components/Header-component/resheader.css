@@ -39,8 +39,8 @@
       width: 100%;
     /* padding-left: 25px; */
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 50px;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 20px;
     list-style-type: none;
   }
   .mobile-option {
