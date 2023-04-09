@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BreadCrumb from "../../Components/Blog/BreadCrumb";
+import CommentsContainer from "../../Components/Blog/Comments/CommentsContainer";
 import SugestedPost from "../../Components/Blog/SugestedPost";
 import images from "../../constants/images";
 
@@ -100,6 +101,7 @@ const Read = () => {
             </p>
           </div>
         </div>
+        <CommentsContainer className="mt-10" logginUserId='a1' />
       </article>
         <SugestedPost header="Latest Articles" posts={postsData} tags={tagsData}
         className="mt-8 md:mb-8 lg:mt-0 lg:max-w-xs"
