@@ -17,7 +17,7 @@ const CommentForm = ({btnLabel, formSubmitHandler,initialText='', formCancleHand
         rows="5" 
         className='w-full focus:outline-none p-2' placeholder='Leave your comment here...' />
        
-        <div className='flex items-center gap-x-2 pt-2'>
+        <div className='flex flex-col-reverse gap-y-2 min-[420px]:flex-row items-center gap-x-2 pt-2'>
         {
           formCancleHandler && (
             <button 

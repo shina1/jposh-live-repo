@@ -4,6 +4,7 @@ import BreadCrumb from "../../Components/Blog/BreadCrumb";
 import CommentsContainer from "../../Components/Blog/Comments/CommentsContainer";
 import SugestedPost from "../../Components/Blog/SugestedPost";
 import images from "../../constants/images";
+import SocialShareBtn from "../../Components/Blog/SocialShareBtn";
 
 const breadCrumbsData = [
   {
@@ -103,9 +104,16 @@ const Read = () => {
         </div>
         <CommentsContainer className="mt-10" logginUserId='a1' />
       </article>
-        <SugestedPost header="Latest Articles" posts={postsData} tags={tagsData}
+      <div className="">
+      <SugestedPost header="Latest Articles" posts={postsData} tags={tagsData}
         className="mt-8 md:mb-8 lg:mt-0 lg:max-w-xs"
         />
+        <div className="mt-7">
+          <h2 className="font-roboto font-medium text-dark-hard mb-4 md:text-xl">Share on:</h2>
+          <SocialShareBtn url={encodeURI("https://link.com")} title={encodeURIComponent("the-artilce-title")} />
+        </div>
+      </div>
+       
     </section>
   );
 };

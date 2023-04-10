@@ -15,7 +15,8 @@ const CommentsContainer = ({ className, logginUserId }) => {
       setComments(commentsData);
     })();
   }, []);
-console.log('comments', comments);
+
+  
   function generateRandomId(length) {
     let result = "";
     const characters =
