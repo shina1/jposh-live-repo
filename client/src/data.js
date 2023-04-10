@@ -212,3 +212,57 @@ export const customerTestimonials = [
         desc: "Jposh you outdid yourself again. I have no single doubt about you when it comes to sewing. This particular dress I give it you. You made this dress just by seeing her pictures, no measurement and it was exact her size. I give it to you. Thank you so much. The dad said all the mother's at the party took your contact as they couldn't get over the dress on her. They all thought it was ready-made "
     }
 ]
+
+// sample articles
+export const articles = [
+    {
+        id: '123a',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '153au',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '12a',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '123aut89',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '123atddse',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '123a8jr',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '9823auj',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '125atg',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    }
+    ,{
+        id: '126akios',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    },
+    {
+        id: '127ajksks',
+        title: "Future of work",
+        desc: "Majority of peole will work in jobs that don’t exist today."
+    }
+]
